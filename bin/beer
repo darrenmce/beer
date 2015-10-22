@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-const osmosis = require('osmosis');
-const colors = require('colors');
-const program = require('commander');
+var osmosis = require('osmosis');
+var colors = require('colors');
+var program = require('commander');
 
 program
   .version('0.0.1')
   .parse(process.argv);
 
-const beer = encodeURIComponent(program.args.join(' '));
+var beer = encodeURIComponent(program.args.join(' '));
 
 osmosis
 .post('http://www.ratebeer.com/findbeer.asp', `BeerName=${beer}`,
@@ -73,5 +73,13 @@ function formatRating(rating) {
 
 
 function formatData(data) {
-  return `The beer ${colors.blue(data.beer)} is ${formatRating(data.overall)}. (${data.overall} | ${data.style})`;
+  return 'The beer ' +
+    colors.blue(data.beer) +
+    'is ' +
+    formatRating(data.overall) +
+    '. (' +
+    data.overall +
+    ' | ' +
+    data.style +
+    ')';
 }
