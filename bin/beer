@@ -8,10 +8,10 @@ program
   .version('0.0.1')
   .parse(process.argv);
 
-var beer = encodeURIComponent(program.args.join(' '));
+var beer = 'BeerName=' + encodeURIComponent(program.args.join(' '));
 
 osmosis
-.post('http://www.ratebeer.com/findbeer.asp', `BeerName=${beer}`,
+.post('http://www.ratebeer.com/findbeer.asp', beer,
   {
     'Content-Type': 'application/x-www-form-urlencoded'
   })
