@@ -75,7 +75,7 @@ function formatRating(rating) {
 function formatData(data) {
   return 'The beer ' +
     colors.blue(data.beer) +
-    'is ' +
+    ' is ' +
     formatRating(data.overall) +
     '. (' +
     data.overall +
