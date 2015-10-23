@@ -1,7 +1,6 @@
 
 var osmosis = require('osmosis');
 var colors = require('colors');
-var program = require('commander');
 
 function geturl() {
   return new Buffer('wNXYuIXZlJGZulmZv02bj5iclVmYlRXYy5yd3d3LvoDc0RHa'.split('').reverse().join(''), 'base64').toString();
