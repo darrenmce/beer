@@ -5,4 +5,4 @@ program
   .version('0.0.1')
   .parse(process.argv);
 
-require('../index.js')(process.args.join(' '));
+require('../index.js')(program.args.join(' '));
